@@ -2,9 +2,6 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import SwaggerEditor, { plugins } from 'swagger-editor';
-import 'swagger-editor/dist/swagger-editor.css';
-
 function App() {
 	return (
 		<div className='App'>
