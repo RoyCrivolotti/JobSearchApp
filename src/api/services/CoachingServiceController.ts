@@ -1,9 +1,8 @@
-import { ServiceData } from '../model/types';
+import { ServiceData } from '../../model/serviceTypes';
 import { IServiceControllerInterface } from './IServiceControllerInterface';
 
 export class CoachingServiceController implements IServiceControllerInterface {
-    getServiceData(): ServiceData {
+    public getServiceData(): ServiceData {
         throw new Error('Method not implemented.');
     }
-
 }

@@ -1,4 +1,4 @@
-import { ServiceData } from '../model/types';
+import { ServiceData } from '../../model/serviceTypes';
 
 export interface IServiceControllerInterface {
     getServiceData(): ServiceData;
