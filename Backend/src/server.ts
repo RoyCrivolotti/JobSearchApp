@@ -10,6 +10,9 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import bodyParser from 'body-parser';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 // load routes
 import routes from './router';
@@ -17,11 +20,8 @@ import { developmentErrors, productionErrors, notFound } from './handlers/errorH
 
 const app = express();
 
-import envs from './config';
-
-const PORT = process.env.NODE_ENV && process.env.NODE_ENV === 'development'
-    ? envs.SERVER_PORT
-    : envs.PORT;
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+const PORT = process.env.NODE_ENV ? process.env.NODE_ENV : '8080';
 
 // log only 4xx and 5xx responses to console
 app.use(logger('dev', {
