@@ -2,7 +2,8 @@
 	"env": {
 		"browser": true,
 		"es6": true
-	},
+    },
+    "root": true,
 	"extends": [
 		"plugin:@typescript-eslint/recommended",
 		"plugin:@typescript-eslint/recommended-requiring-type-checking"
@@ -276,7 +277,8 @@
 			"error",
 			{
 				"cases": {
-					"camelCase": true
+                    "camelCase": true,
+                    "PascalCase": true
 				}
 			}
 		],
