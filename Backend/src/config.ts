@@ -1,12 +1,15 @@
 // const createError = require('http-errors');
 
 // read the configuration from the .env file
-const dotenv = require('dotenv');
+import dotenv from 'dotenv';
 
-const envPath = `${process.env.NODE_ENV ? `.env.${process.env.NODE_ENV}` : '.env'}`;
+const { NODE_ENV } = process.env;
+
+// Enabling the use of dev/prod .env files
+const envPath = `${NODE_ENV ? `.env.${NODE_ENV}` : '.env'}`;
 const environmentVariables = dotenv.config({ path: envPath });
 
-console.log(`Environment: ${process.env.NODE_ENV}`);
+console.log(`Environment: ${NODE_ENV ? NODE_ENV : 'Development' }`);
 
 const { parsed: envs } = environmentVariables;
 
