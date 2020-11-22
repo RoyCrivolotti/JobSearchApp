@@ -5,3 +5,6 @@ node_modules
 
 # Private key data
 serviceAccountKey.json
+
+# Ignoring firebase config file
+firebase.js
