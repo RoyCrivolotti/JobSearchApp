@@ -1,6 +1,6 @@
 export type ServiceTier = {
     tier: string;
-    price: float;
+    price: number;
     description: string;
 };
 
