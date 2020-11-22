@@ -53,6 +53,7 @@ app.get('/*', (req, res, next) => res.sendFile(path.join(__dirname, 'build', 'in
 app.use(notFound);
 
 // otherwise, forward the error to the corresponding error handler given the environment
+// eslint-disable-next-line @typescript-eslint/no-unused-expressions
 app.get('env') === 'development'
     ? app.use(developmentErrors)
     : app.use(productionErrors);
