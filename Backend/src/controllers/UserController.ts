@@ -1,6 +1,6 @@
 import { User, UserSubscriptions } from '../../../Models/user';
 
-export class SubscriptionServiceController {
+export class UserController {
     public async getUserDetails(userId: number): Promise<User> {
         await fetch('google.com');
         throw new Error('Method not implemented.');
