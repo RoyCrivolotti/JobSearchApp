@@ -1,13 +1,13 @@
 import express from 'express';
 // import path from 'path';
 
-import { UserController } from './controllers/UserController'
-import { SubscriptionController } from './controllers/SubscriptionController'
+import { UserController } from './controllers/UserController';
+import { SubscriptionController } from './controllers/SubscriptionController';
 
 // Services' controllers
-import { CoachingServiceController } from './controllers/services/CoachingServiceController'
-import { ProfileUpdateServiceController } from './controllers/services/ProfileUpdateServiceController'
-import { ResumeServiceController } from './controllers/services/ResumeServiceController'
+import { CoachingServiceController } from './controllers/services/CoachingServiceController';
+import { ProfileUpdateServiceController } from './controllers/services/ProfileUpdateServiceController';
+import { ResumeServiceController } from './controllers/services/ResumeServiceController';
 
 const router = express.Router();
 
@@ -22,8 +22,9 @@ router.get('/', () => 'Reached \/');
 router.get('/user/:userId', userController.getUserDetails);
 router.get('/user/subscriptions/:userId', userController.getUserSubscriptions);
 router.get('/subscription', subscriptionController.listSubscriptions);
-router.get('/coaching', coachingServiceController.getServiceData);
-router.get('/profileUpdate', profileUpdateServiceController.getServiceData);
-router.get('/resume', resumeServiceController.getServiceData);
+
+router.get('/services/coaching', coachingServiceController.getServiceData);
+router.get('/services/profileUpdate', profileUpdateServiceController.getServiceData);
+router.get('/services/resume', resumeServiceController.getServiceData);
 
 export default router;
