@@ -1,19 +1,18 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import App from '../pages/App';
+import 'materialize-css/dist/css/materialize.min.css';
 
-// Import pages/layouts
+// Layouts
 import NotFound from '../pages/NotFound';
-import SignIn from '../pages/SignIn';
 // import SignUp from '../pages/SignUp';
+import Navbar from './Navbar';
 
 const Router = () => (
     <BrowserRouter>
-        {/* <Navbar /> */}
+        <Navbar />
         <Switch>
             <Route exact path="/" component={App} />
-            <Route exact path="/signin" component={SignIn} />
-            {/* <Route exact path='/signup' component={SignUp} /> */}
             <Route component={NotFound} />
         </Switch>
     </BrowserRouter>
