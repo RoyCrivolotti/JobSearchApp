@@ -1,16 +1,15 @@
 const path = require('path');
 const fs = require('fs');
 
-const firestoreBackup = require('firestore-export-import');
+const firestoreBackupService = require('firestore-export-import');
 const serviceAccount = require('./serviceAccountKey.json');
-const databaseData = require('./firebase');
 
 // Initiate Firebase App
-firestoreBackup.initializeApp(serviceAccount, process.env.DATABASE_URL);
+firestoreBackupService.initializeApp(serviceAccount, process.env.DATABASE_URL);
 
 // Start exporting your data
 const exportFirestore = async () => {
-	await firestoreBackup.backups()
+	await firestoreBackupService.backups()
 		.then(collections => {
 			// console.log(JSON.stringify(collections));
 
@@ -23,10 +22,15 @@ const exportFirestore = async () => {
 const importFirestore = async () => {
 	try {
 		console.log('Initialzing Firebase');
-		await firestoreBackup.initializeApp(serviceAccount, databaseData);
+		await firestoreBackupService.initializeApp(serviceAccount, process.env.DATABASE_URL);
 		console.log('Firebase Initialized');
 
-		await firestoreBackup.restore('./data-clean/firebase/users.json');
+		const backupData = fs.readFileSync(path.resolve(__dirname, 'collections.json'));
+
+		// Start importing your data
+		await firestoreBackupService.restore(JSON.parse(backupData));
+
+		// await firestoreBackupService.restore('collections.json');
 		console.log('Upload Success');
 	} catch (error) {
 		console.log(error);
