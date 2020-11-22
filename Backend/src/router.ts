@@ -1,13 +1,29 @@
 import express from 'express';
 // import path from 'path';
 
-const searchController = require('../controllers/searchController');
-const authController = require('../controllers/authController');
+import { UserController } from './controllers/UserController'
+import { SubscriptionController } from './controllers/SubscriptionController'
+
+// Services' controllers
+import { CoachingServiceController } from './controllers/services/CoachingServiceController'
+import { ProfileUpdateServiceController } from './controllers/services/ProfileUpdateServiceController'
+import { ResumeServiceController } from './controllers/services/ResumeServiceController'
 
 const router = express.Router();
 
-router.get('/', searchController.ping);
-router.get('/search', searchController.getNearestRestaurants);
-router.post('/sessionLogin', authController.handleLogin);
+const userController = new UserController();
+const subscriptionController = new SubscriptionController();
+const coachingServiceController = new CoachingServiceController();
+const profileUpdateServiceController = new ProfileUpdateServiceController();
+const resumeServiceController = new ResumeServiceController();
 
-module.exports = router;
+router.get('/', () => 'Reached \/');
+
+router.get('/user/:userId', userController.getUserDetails);
+router.get('/user/subscriptions/:userId', userController.getUserSubscriptions);
+router.get('/subscription', subscriptionController.listSubscriptions);
+router.get('/coaching', coachingServiceController.getServiceData);
+router.get('/profileUpdate', profileUpdateServiceController.getServiceData);
+router.get('/resume', resumeServiceController.getServiceData);
+
+export default router;
