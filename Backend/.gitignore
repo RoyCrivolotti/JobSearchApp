@@ -8,3 +8,6 @@ serviceAccountKey.json
 
 # Ignoring firebase config file
 firebase.js
+
+# Ignoring logs
+*.log
