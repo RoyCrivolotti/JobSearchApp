@@ -277,8 +277,8 @@
 			"error",
 			{
 				"cases": {
-                    "camelCase": true,
-                    "PascalCase": true
+					"camelCase": true,
+					"pascalCase": true
 				}
 			}
 		],
