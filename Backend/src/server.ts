@@ -13,11 +13,11 @@ import bodyParser from 'body-parser';
 
 // load routes
 import routes from './router';
-import errorHandler from './handlers/errorHandlers';
+import { developmentErrors, productionErrors, notFound } from './handlers/errorHandlers';
 
 const app = express();
 
-import { envs } from './server/config';
+import envs from './config';
 
 const PORT = process.env.NODE_ENV && process.env.NODE_ENV === 'development'
     ? envs.SERVER_PORT
@@ -50,16 +50,15 @@ app.get('/*', (req, res, next) => res.sendFile(path.join(__dirname, 'build', 'in
 }));
 
 // if the routes above didn't catch it, we 404 it and forward it to the error handler
-app.use(errorHandler.notFound);
+app.use(notFound);
 
 // otherwise, forward the error to the corresponding error handler given the environment
 app.get('env') === 'development'
-    ? app.use(errorHandler.developmentErrors)
-    : app.use(errorHandler.productionErrors);
+    ? app.use(developmentErrors)
+    : app.use(productionErrors);
 
-app.listen(PORT, error => {
-    if (error) next(error);
-    else console.log(`Listening on port ${PORT}`);
-});
+app.listen(PORT, () => {
+    console.log(`Listening on port ${PORT}`);
+}).on('error', error => console.error(`Failed to listen to port ${PORT}`, error));
 
 module.exports = app;
