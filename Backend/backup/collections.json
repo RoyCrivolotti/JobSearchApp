@@ -1,0 +1,73 @@
+{
+    "services": {
+        "I8mh2PC1Piqs2pREjwgB": {
+            "tiers": [
+                {
+                    "price": 1,
+                    "name": "Basic",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                },
+                {
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "price": 2,
+                    "name": "Professional"
+                },
+                {
+                    "price": 3,
+                    "name": "Expert",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                }
+            ],
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "url": "/services/resume",
+            "name": "Resume Writing",
+            "subCollection": {}
+        },
+        "Ngnf73PiNR3wmUbzpL8j": {
+            "tiers": [
+                {
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "name": "Basic",
+                    "price": 1
+                },
+                {
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "name": "Professional",
+                    "price": 2
+                },
+                {
+                    "price": 3,
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "name": "Expert"
+                }
+            ],
+            "name": "Coaching",
+            "url": "/services/coaching",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "subCollection": {}
+        },
+        "NynSEDjnXlJdh2PmtTZG": {
+            "url": "/services/profileUpdate",
+            "name": "Profile Update",
+            "tiers": [
+                {
+                    "price": 1,
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "name": "Basic"
+                },
+                {
+                    "name": "Professional",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "price": 2
+                },
+                {
+                    "name": "Expert",
+                    "price": 3,
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                }
+            ],
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "subCollection": {}
+        }
+    }
+}
