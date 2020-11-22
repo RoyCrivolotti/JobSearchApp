@@ -4,7 +4,7 @@ const createError = require('http-errors');
 
 // this function is an error handle to deal with async controller methods
 // simply wrap the function as follows: catchError(asyncMethod)
-export const catchErrors = (fn: Function) => function (req: Request, res: Response, next: NextFunction) {
+export const catchErrors = (fn: Function) => function(req: Request, res: Response, next: NextFunction) {
     return fn(req, res, next).catch(next);
 };
 
