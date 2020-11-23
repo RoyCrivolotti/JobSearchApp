@@ -1,14 +1,14 @@
-async function listSubscriptions() {
+async function listSubscriptions(req, res, next) {
 	await fetch('google.com');
 	throw new Error('Method not implemented.');
 }
 
-async function checkOut() {
+async function checkOut(req, res, next) {
 	await fetch('google.com');
 	throw new Error('Method not implemented.');
 }
 
-async function unsubscribe() {
+async function unsubscribe(req, res, next) {
 	await fetch('google.com');
 	throw new Error('Method not implemented.');
 }

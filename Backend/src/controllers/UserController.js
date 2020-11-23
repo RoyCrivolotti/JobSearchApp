@@ -1,9 +1,9 @@
-async function getUserDetails(userId) {
+async function getUserDetails(req, res, next) {
 	await fetch('google.com');
 	throw new Error('Method not implemented.');
 }
 
-async function getUserSubscriptions(userId) {
+async function getUserSubscriptions(req, res, next) {
 	await fetch('google.com');
 	throw new Error('Method not implemented.');
 }
