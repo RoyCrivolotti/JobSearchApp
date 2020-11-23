@@ -11,13 +11,16 @@ function App() {
     const [services, setServices] = useState<ServicesList>([]);
 
     useEffect(() => {
-        if (!process.env.API_URL) {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        console.log(`process.env.REACT_APP_API_URL: ${process.env.REACT_APP_API_URL}`);
+
+        if (!process.env.REACT_APP_API_URL) {
             console.log('The API URL has not been defined');
 
             return;
         }
 
-        fetch(`${process.env.API_URL}/services/all/get`)
+        fetch(`${process.env.REACT_APP_API_URL}/services/all/get`)
             .then(async res => res.json())
             .then(_services => _services as ServicesList)
             .then(setServices)
