@@ -1,16 +1,15 @@
 export type ServiceTier = {
-    tier: string;
+    name: string;
     price: number;
     description: string;
 };
 
 export type ServiceData = {
-    serviceName: string;
-    serviceTiers: ServiceTier[];
+    name: string;
+    tiers: ServiceTier[];
     description: string;
-    serviceUrl: string;
+    url: string;
+    id: string;
 };
 
-export type ServicesList = {
-    services: ServiceData[];
-};
+export type ServicesList = ServiceData[];
