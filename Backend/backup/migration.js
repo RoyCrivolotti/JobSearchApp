@@ -1,13 +1,11 @@
 const path = require('path');
 const fs = require('fs');
 
-require('dotenv').config({ path: path.resolve(__dirname, '..', '.env') });
-
 const firestoreBackupService = require('firestore-export-import');
 const serviceAccount = require('../src/database/serviceAccountKey.json');
 
 // Initiate Firebase App
-firestoreBackupService.initializeApp(serviceAccount, process.env.DATABASE_URL);
+firestoreBackupService.initializeApp(serviceAccount, `https://${serviceAccount.project_id}.firebaseio.com`);
 
 // Start exporting your data
 const exportFirestore = async () => {
