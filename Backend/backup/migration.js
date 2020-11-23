@@ -4,7 +4,7 @@ const fs = require('fs');
 require('dotenv').config({ path: path.resolve(__dirname, '..', '.env') });
 
 const firestoreBackupService = require('firestore-export-import');
-const serviceAccount = require('./serviceAccountKey.json');
+const serviceAccount = require('../src/database/serviceAccountKey.json');
 
 // Initiate Firebase App
 firestoreBackupService.initializeApp(serviceAccount, process.env.DATABASE_URL);
