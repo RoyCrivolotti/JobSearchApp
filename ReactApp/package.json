@@ -5,6 +5,7 @@
     "dependencies": {
         "@testing-library/jest-dom": "^5.11.6",
         "cors": "^2.8.5",
+        "dotenv": "^8.2.0",
         "materialize-css": "^1.0.0",
         "moment": "^2.29.1",
         "patch-package": "^6.2.2",
@@ -17,7 +18,7 @@
         "web-vitals": "^0.2.4"
     },
     "scripts": {
-        "start": "react-scripts start --env.API_URL=localhost:8080/api",
+        "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
