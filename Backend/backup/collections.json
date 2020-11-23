@@ -1,6 +1,6 @@
 {
     "services": {
-        "I8mh2PC1Piqs2pREjwgB": {
+        "Resume Writing": {
             "tiers": [
                 {
                     "price": 1,
@@ -23,7 +23,7 @@
             "name": "Resume Writing",
             "subCollection": {}
         },
-        "Ngnf73PiNR3wmUbzpL8j": {
+        "Coaching": {
             "tiers": [
                 {
                     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -46,7 +46,7 @@
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "subCollection": {}
         },
-        "NynSEDjnXlJdh2PmtTZG": {
+        "Profile Update": {
             "url": "/services/profileUpdate",
             "name": "Profile Update",
             "tiers": [
