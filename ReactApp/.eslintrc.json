@@ -210,7 +210,9 @@
 		"jsdoc/no-types": "error",
 		"max-classes-per-file": "off",
 		"import/prefer-default-export": "off",
-		"class-methods-use-this": "off",
+        "class-methods-use-this": "off",
+        "array-callback-return": "off",
+        "react/prop-types": 0,
 		"max-len": [
 			"error",
 			{
