@@ -31,7 +31,8 @@ app.use(logger('common', {
 	stream: fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' }),
 }));
 
-app.use(cors());
+// TODO: this enables cors only for the 'http://localhost:3000' origin (React's default port, modify as necessary)
+app.use(cors({ origin: 'http://localhost:3000' }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
