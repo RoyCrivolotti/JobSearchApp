@@ -15,6 +15,7 @@ const router = express.Router();
 router.get('/', (req, res, next) => res.send('Reached the API'));
 
 router.get('/user/:userId', userController.getUserDetails);
+router.post('/user/:email/:password', userController.createUser);
 router.get('/user/subscriptions/:userId', userController.getUserSubscriptions);
 router.get('/subscription', subscriptionController.listSubscriptions);
 
