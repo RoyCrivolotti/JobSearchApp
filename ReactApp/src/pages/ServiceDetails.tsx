@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+/* eslint-disable no-lone-blocks */
 /* eslint-disable react/destructuring-assignment */
 import React, { useEffect, useState } from 'react';
 import TierDetails from '../components/TierDetails';
@@ -42,15 +44,19 @@ const ServiceDetails = (props: { serviceName: string }) => {
     const tiersHtml = tierList.map(tier => <TierDetails key={tier.name} tier={tier} />);
 
     return (
-        <div className="col m4">
-            <div className="card blue-grey darken-1">
-                <div className="card-content white-text">
-                    <span className="card-title">Pricing</span>
-                    <p>
-                        Description to be fetched HERE!
-                    </p>
+        <div className="container portfolio">
+            <div className="header">
+                <h1 className="center-align">Pricing</h1>
+                <h3 className="center-align">
+                    Description to be fetched HERE!
+                </h3>
+            </div>
+            <div className="container portfolio">
+                <div className="col s12 m12 l12">
+                    <div className="row">
+                        {tiersHtml}
+                    </div>
                 </div>
-                {tiersHtml}
             </div>
         </div>
     );
