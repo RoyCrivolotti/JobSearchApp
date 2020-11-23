@@ -11,7 +11,7 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 
-// load routes
+// Load routes
 const routes = require('./router');
 const { developmentErrors, productionErrors, notFound } = require('./handlers/errorHandlers');
 
@@ -21,12 +21,12 @@ const app = express();
 
 const PORT = process.env.NODE_ENV ? process.env.NODE_ENV : '8080';
 
-// log only 4xx and 5xx responses to console
+// Log only 4xx and 5xx responses to console
 app.use(logger('dev', {
 	skip: (req, res) => res.statusCode < 400,
 }));
 
-// log all requests to access.log
+// Log all requests to access.log
 app.use(logger('common', {
 	stream: fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' }),
 }));
@@ -36,21 +36,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use(express.static(path.join(__dirname, 'build')));
-
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 
-// route handling
+// Route handling
 app.use('/api', routes);
-app.get('/*', (req, res, next) => res.sendFile(path.join(__dirname, 'build', 'index.html'), error => {
-	if (error) next(error);
-}));
 
-// if the routes above didn't catch it, we 404 it and forward it to the error handler
+// If the routes above didn't catch it, we 404 it and forward it to the error handler
 app.use(notFound);
 
-// otherwise, forward the error to the corresponding error handler given the environment
+// Otherwise, forward the error to the corresponding error handler given the environment
 // eslint-disable-next-line no-unused-expressions
 app.get('env') === 'development'
 	? app.use(developmentErrors)
