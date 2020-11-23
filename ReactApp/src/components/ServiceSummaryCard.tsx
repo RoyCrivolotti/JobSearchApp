@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 import { ServiceData } from '../model/serviceTypes';
 
-const ServiceSummary = (props: { service: ServiceData }) => {
+const ServiceSummaryCard = (props: { service: ServiceData }) => {
     const { service } = props;
 
     // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -23,11 +23,11 @@ const ServiceSummary = (props: { service: ServiceData }) => {
                     </p>
                 </div>
                 <div className="card-action">
-                    <a href={`${process.env.PUBLIC_URL}/${service.url}`}>View details</a>
+                    <a href={service.url}>View details</a>
                 </div>
             </div>
         </div>
     );
 };
 
-export default ServiceSummary;
+export default ServiceSummaryCard;

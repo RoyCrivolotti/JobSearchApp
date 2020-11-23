@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import logo from '../logo.svg';
 import './css/App.css';
 
-import ServiceSummary from '../components/ServiceSummary';
+import ServiceSummary from '../components/ServiceSummaryCard';
 
 import { ServicesList } from '../model/serviceTypes';
 
@@ -25,6 +25,8 @@ function App() {
             .then(_services => _services as ServicesList)
             .then(data => {
                 setServices(data);
+
+                console.log(data);
 
                 // Updating the amount of services to re-render after fetch returns
                 if (servicesAmount !== data.length) {

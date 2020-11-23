@@ -13,3 +13,4 @@ export type ServiceData = {
 };
 
 export type ServicesList = ServiceData[];
+export type ServiceTierList = ServiceTier[];
