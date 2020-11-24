@@ -28,7 +28,7 @@ const TierDetails = (props: { tier: ServiceTier }) => {
                     </p>
                 </div>
                 <div className="card-action black-text">
-                    <button className="btn waves-effect waves-light" type="submit" name="action" onClick={}>
+                    <button className="btn waves-effect waves-light" type="submit" name="action">
                         Get started
                     </button>
                 </div>

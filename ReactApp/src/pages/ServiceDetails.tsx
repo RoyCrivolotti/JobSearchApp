@@ -1,16 +1,13 @@
-/* eslint-disable max-len */
-/* eslint-disable no-lone-blocks */
-/* eslint-disable react/destructuring-assignment */
 import React, { useEffect, useState } from 'react';
 import TierDetails from '../components/TierDetails';
 
-import { ServiceData, ServiceTier, ServiceTierList } from '../model/serviceTypes';
+import { ServiceData } from '../model/serviceTypes';
 
 const ServiceDetails = (props: { serviceName: string }) => {
     const { serviceName } = props;
 
     // eslint-disable-next-line @typescript-eslint/naming-convention
-    const [tierList, setTierList] = useState<ServiceTierList>([]);
+    const [serviceData, setServiceData] = useState<ServiceData>();
     const [tierAmount, setTierAmount] = useState(0);
 
     useEffect(() => {
@@ -26,9 +23,9 @@ const ServiceDetails = (props: { serviceName: string }) => {
             mode: 'cors',
         })
             .then(async res => res.json())
-            .then(serviceData => serviceData as ServiceData)
+            .then(_serviceData => _serviceData as ServiceData)
             .then(data => {
-                setTierList(data.tiers);
+                setServiceData(data);
 
                 // Updating the amount of services to re-render after fetch returns
                 if (tierAmount !== data.tiers.length) {
@@ -38,17 +35,17 @@ const ServiceDetails = (props: { serviceName: string }) => {
             .catch(error => console.error(error));
     }, []);
 
-    console.log('tiers: ', tierList);
+    console.log('tiers: ', serviceData);
 
     // Generating array of JSX elements for each tier fetched
-    const tiersHtml = tierList.map(tier => <TierDetails key={tier.name} tier={tier} />);
+    const tiersHtml = serviceData?.tiers.map(tier => <TierDetails key={tier.name} tier={tier} />);
 
     return (
         <div className="container portfolio">
             <div className="header">
-                <h1 className="center-align">Pricing</h1>
+                <h1 className="center-align">{serviceData?.name}</h1>
                 <h3 className="center-align">
-                    Description to be fetched HERE!
+                    {serviceData?.description}
                 </h3>
             </div>
             <div className="container portfolio">
