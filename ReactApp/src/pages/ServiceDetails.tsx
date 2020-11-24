@@ -38,7 +38,7 @@ const ServiceDetails = (props: { serviceName: string }) => {
     console.log('tiers: ', serviceData);
 
     // Generating array of JSX elements for each tier fetched
-    const tiersHtml = serviceData?.tiers.map(tier => <TierDetails key={tier.name} tier={tier} />);
+    const tiersHtml = serviceData?.tiers.map(tier => <TierDetails key={tier.name} tier={tier} serviceName={serviceName} />);
 
     return (
         <div className="container portfolio">

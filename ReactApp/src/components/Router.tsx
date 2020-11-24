@@ -9,6 +9,7 @@ import Navbar from './Navbar';
 // Layouts
 import NotFound from '../pages/NotFound';
 import ServiceTierDetails from '../pages/ServiceDetails';
+import Checkout from '../pages/Checkout';
 
 const Router = () => (
     <BrowserRouter>
@@ -18,6 +19,7 @@ const Router = () => (
             <Route exact path="/services/resume" component={() => <ServiceTierDetails serviceName="resume" />} />
             <Route exact path="/services/coaching" component={() => <ServiceTierDetails serviceName="coaching" />} />
             <Route exact path="/services/profileUpdate" component={() => <ServiceTierDetails serviceName="profileUpdate" />} />
+            <Route exact path="/services/checkout/:serviceName" component={Checkout} />
             <Route component={NotFound} />
         </Switch>
     </BrowserRouter>

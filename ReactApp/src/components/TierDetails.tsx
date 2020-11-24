@@ -1,10 +1,11 @@
 /* eslint-disable react/destructuring-assignment */
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
-import { ServiceData, ServiceTier } from '../model/serviceTypes';
+import { ServiceTier } from '../model/serviceTypes';
 
-const TierDetails = (props: { tier: ServiceTier }) => {
-    const { tier } = props;
+const TierDetails = (props: { tier: ServiceTier; serviceName: string }) => {
+    const { tier, serviceName } = props;
 
     // eslint-disable-next-line @typescript-eslint/naming-convention
     const [tierData, setTierData] = useState<ServiceTier>({ name: '', description: '', price: 0 });
@@ -28,9 +29,11 @@ const TierDetails = (props: { tier: ServiceTier }) => {
                     </p>
                 </div>
                 <div className="card-action black-text">
-                    <button className="btn waves-effect waves-light" type="submit" name="action">
-                        Get started
-                    </button>
+                    <Link to={{ pathname: `/services/checkout/${serviceName}`, state: tier }}>
+                        <button className="btn waves-effect waves-light" type="submit" name="action">
+                            Get started
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>
